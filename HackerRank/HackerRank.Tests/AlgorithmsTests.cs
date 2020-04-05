@@ -45,5 +45,12 @@ namespace HackerRank.Tests
             Assert.AreEqual(aliceRating, result[0]);
             Assert.AreEqual(bobRating, result[1]);
         }
+
+        [TestMethod]
+        public void AVeryBigSumTests()
+        {
+            var exercise = new AVeryBigSum("1000000001 1000000002 1000000003 1000000004 1000000005");
+            Assert.AreEqual(5000000015, exercise.Execute());
+        }
     }
 }
