@@ -26,11 +26,11 @@ namespace HackerRank.Algorithms.Exercises
 
         public int[] Execute()
         {
-            var splitedAliceTriplet = SplitNumbersInput(AliceTriplet);
-            var splitedBobTriplet = SplitNumbersInput(BobTriplet);
+            var splittedAliceTriplet = SplitNumbersInput(AliceTriplet);
+            var splittedBobTriplet = SplitNumbersInput(BobTriplet);
 
-            var aliceTriplet = ConvertArrayStringToInt(splitedAliceTriplet);
-            var bobTriplet = ConvertArrayStringToInt(splitedBobTriplet);
+            var aliceTriplet = ConvertArrayStringToInt(splittedAliceTriplet);
+            var bobTriplet = ConvertArrayStringToInt(splittedBobTriplet);
 
             var ratingsArray = new int[2];
 
