@@ -1,5 +1,7 @@
 ﻿using HackerRank.Algorithms.Exercises;
+using HackerRank.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace HackerRank.Tests
 {
@@ -51,6 +53,31 @@ namespace HackerRank.Tests
         {
             var exercise = new AVeryBigSum("1000000001 1000000002 1000000003 1000000004 1000000005");
             Assert.AreEqual(5000000015, exercise.Execute());
+        }
+
+        [TestMethod]
+        public void DiagonalDifferenceTests()
+        {
+            // Case One (Correct)
+            var inputCaseOne = new int[3][]
+            {
+                new int[] { 11, 2, 4 },
+                new int[] { 4, 5, 6 },
+                new int[] { 10, 8, -12 }
+            };
+
+            var exerciseCaseOne = new DiagonalDifference(inputCaseOne);
+            Assert.AreEqual(15, exerciseCaseOne.Execute());
+
+            // Case Two (Check Constraints)
+            var inputCaseTwo = new int[3][]
+            {
+                new int[] { -100011, 2, 4 },
+                new int[] { 4, 5, 6 },
+                new int[] { 10, 8, -12 }
+            };
+            Assert.ThrowsException<ConstraintException>(
+                () => new DiagonalDifference(inputCaseTwo));
         }
     }
 }
