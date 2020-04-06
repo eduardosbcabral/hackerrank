@@ -70,6 +70,10 @@ namespace HackerRank.Algorithms.Exercises
 
             return array;
         }
+
+        public void CheckConstraints()
+        {
+        }
     }
 
     internal enum Names : byte

@@ -5,5 +5,6 @@ namespace HackerRank.Shared
     public interface IExercise<T>
     {
         T Execute();
+        void CheckConstraints();
     }
 }

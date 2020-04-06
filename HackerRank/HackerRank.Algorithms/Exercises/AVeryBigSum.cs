@@ -61,5 +61,9 @@ namespace HackerRank.Algorithms.Exercises
 
             return array;
         }
+
+        public void CheckConstraints()
+        {
+        }
     }
 }

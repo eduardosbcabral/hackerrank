@@ -24,5 +24,9 @@ namespace HackerRank.Algorithms.Exercises
         {
             return A + B;
         }
+
+        public void CheckConstraints()
+        {
+        }
     }
 }
