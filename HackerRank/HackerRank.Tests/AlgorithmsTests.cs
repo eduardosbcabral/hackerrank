@@ -1,7 +1,6 @@
 ﻿using HackerRank.Algorithms.Exercises;
 using HackerRank.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace HackerRank.Tests
 {
@@ -78,6 +77,39 @@ namespace HackerRank.Tests
             };
             Assert.ThrowsException<ConstraintException>(
                 () => new DiagonalDifference(inputCaseTwo));
+        }
+
+        [TestMethod]
+        public void PlusMinusTests()
+        {
+            // Case One (Correct)
+            var inputCaseOne = new int[6]
+            {
+                -4, 3, -9, 0, 4, 1
+            };
+
+            var exerciseCaseOne = new PlusMinus(inputCaseOne);
+
+            var outputCaseOne = new double[3]
+            {
+                0.5,
+                0.333333,
+                0.166667
+            };
+
+            var resultCaseOne = exerciseCaseOne.Execute();
+
+            Assert.AreEqual(outputCaseOne[0], resultCaseOne[0]);
+            Assert.AreEqual(outputCaseOne[1], resultCaseOne[1]);
+            Assert.AreEqual(outputCaseOne[2], resultCaseOne[2]);
+
+            // Case Two (Check Constraints)
+            var inputCaseTwo = new int[6]
+            {
+                -4000, 3, -9, 0, 4, 1
+            };
+            Assert.ThrowsException<ConstraintException>(
+                () => new PlusMinus(inputCaseTwo));
         }
     }
 }
