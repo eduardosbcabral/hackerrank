@@ -1,6 +1,7 @@
 ﻿using HackerRank.Algorithms.Exercises;
 using HackerRank.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace HackerRank.Tests
 {
@@ -90,7 +91,7 @@ namespace HackerRank.Tests
 
             var exerciseCaseOne = new PlusMinus(inputCaseOne);
 
-            var outputCaseOne = new double[3]
+            var expectedOutputCaseOne = new double[3]
             {
                 0.5,
                 0.333333,
@@ -99,9 +100,7 @@ namespace HackerRank.Tests
 
             var resultCaseOne = exerciseCaseOne.Execute();
 
-            Assert.AreEqual(outputCaseOne[0], resultCaseOne[0]);
-            Assert.AreEqual(outputCaseOne[1], resultCaseOne[1]);
-            Assert.AreEqual(outputCaseOne[2], resultCaseOne[2]);
+            CollectionAssert.AreEqual(expectedOutputCaseOne, resultCaseOne);
 
             // Case Two (Check Constraints)
             var inputCaseTwo = new int[6]
@@ -110,6 +109,63 @@ namespace HackerRank.Tests
             };
             Assert.ThrowsException<ConstraintException>(
                 () => new PlusMinus(inputCaseTwo));
+        }
+
+        [TestMethod]
+        public void StaircaseTests()
+        {
+            // Case One (Correct)
+            var inputCaseOne = 4;
+
+            var exercise = new Staircase(inputCaseOne);
+
+            var expectedOutputCaseOne = new string[4]
+            {
+                "   #",
+                "  ##",
+                " ###",
+                "####"
+            };
+
+            var resultCaseOne = exercise.Execute();
+
+            CollectionAssert.AreEqual(expectedOutputCaseOne, resultCaseOne);
+
+            // Case Two (Check Constraints)
+            var inputCaseTwo = 500;
+
+            Assert.ThrowsException<ConstraintException>(
+                () => new Staircase(inputCaseTwo));
+        }
+
+        [TestMethod]
+        public void MiniMaxSum()
+        {
+            // Case One (Correct)
+            var inputCaseOne = new uint[5]
+            {
+                769082435, 210437958, 673982045, 375809214, 380564127
+            };
+
+            var exercise = new MiniMaxSum(inputCaseOne);
+
+            var expectedOutputCaseOne = new uint[2]
+            {
+                1640793344, 2199437821
+            };
+
+            var resultCaseOne = exercise.Execute();
+
+            CollectionAssert.AreEqual(expectedOutputCaseOne, resultCaseOne);
+
+            // Case Two (Check Constraints) - Input Size
+            var inputCaseTwo = new uint[2]
+            {
+                1, 2
+            };
+
+            Assert.ThrowsException<ConstraintException>(
+                () => new MiniMaxSum(inputCaseTwo));
         }
     }
 }
