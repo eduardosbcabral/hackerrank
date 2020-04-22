@@ -17,7 +17,6 @@ namespace HackerRank.Algorithms.Exercises
         {
             Numbers = numbers;
             CheckConstraints();
-            Console.WriteLine("Hello World!");
         }
 
         public double[] Execute()
