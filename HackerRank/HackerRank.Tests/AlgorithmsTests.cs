@@ -139,7 +139,7 @@ namespace HackerRank.Tests
         }
 
         [TestMethod]
-        public void MiniMaxSum()
+        public void MiniMaxSumTests()
         {
             // Case One (Correct)
             var inputCaseOne = new uint[5]
@@ -166,6 +166,27 @@ namespace HackerRank.Tests
 
             Assert.ThrowsException<ConstraintException>(
                 () => new MiniMaxSum(inputCaseTwo));
+        }
+
+        [TestMethod]
+        public void TimeConversionTests()
+        {
+            // Case One (Correct)
+            var inputCaseOne = "05:45:54AM";
+
+            var exercise = new TimeConversion(inputCaseOne);
+
+            var resultCaseOne = exercise.Execute();
+
+            var expectedOutputCaseOne = "05:45:54";
+
+            Assert.AreEqual(expectedOutputCaseOne, resultCaseOne);
+
+            // Case Two (Check Constraints)
+            var inputCaseTwo = "15:45:54AM";
+
+            Assert.ThrowsException<ConstraintException>(
+                () => new TimeConversion(inputCaseTwo));
         }
     }
 }
