@@ -188,5 +188,32 @@ namespace HackerRank.Tests
             Assert.ThrowsException<ConstraintException>(
                 () => new TimeConversion(inputCaseTwo));
         }
+
+        [TestMethod]
+        public void BirthdayCakeCandlesTests()
+        {
+            // Case One (Correct)
+            var inputOneCaseOne = 4;
+            var inputTwoCaseOne = new int[4]
+            {
+                5, 2, 1, 3
+            };
+            var exercise = new BirthdayCakeCandles(inputOneCaseOne, inputTwoCaseOne);
+
+            var resultCaseOne = exercise.Execute();
+
+            var expectedOutputCaseOne = 1;
+
+            Assert.AreEqual(expectedOutputCaseOne, resultCaseOne);
+
+            // Case Two (Check Constraints)
+            var inputOneCaseTwo = 4;
+            var inputTwoCaseTwo = new int[5]
+            {
+                3, 2, 1, 3, 4
+            };
+            Assert.ThrowsException<ConstraintException>(
+                () => new BirthdayCakeCandles(inputOneCaseTwo, inputTwoCaseTwo));
+        }
     }
 }
