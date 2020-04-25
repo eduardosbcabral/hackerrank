@@ -8,7 +8,7 @@ namespace HackerRank.Algorithms.Exercises
         public uint[] Numbers { get; private set; }
 
         /// <summary>
-        /// <para>Plus Minus</para>
+        /// <para>Mini Max Sum</para>
         /// <para>Order: 8</para>
         /// <para>Description: Given an array of unsigned integers of size 4, calculate the minimum and maximum sum of exactly four numbers.</para>
         /// </summary>
