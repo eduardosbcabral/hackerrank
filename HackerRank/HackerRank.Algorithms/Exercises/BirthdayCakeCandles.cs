@@ -10,7 +10,7 @@ namespace HackerRank.Algorithms.Exercises
 
         /// <summary>
         /// <para>Birthday Cake Candles</para>
-        /// <para>Order: 10</para>
+        /// <para>Order: 9</para>
         /// <para>Description: Given an array of height of candles, find how many can we blow out. But we can only blow out the tallest ones.</para>
         /// </summary>
         /// <param name="number">Number of candles.</param>

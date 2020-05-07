@@ -8,7 +8,7 @@ namespace HackerRank.Algorithms.Exercises
 
         /// <summary>
         /// <para>Time Conversion</para>
-        /// <para>Order: 9</para>
+        /// <para>Order: 10</para>
         /// <para>Description: Given a time in -hour AM/PM format, convert it to military (24-hour) time.</para>
         /// </summary>
         /// <param name="date">Contains a date in 12-hour AM/PM format.</param>
