@@ -215,5 +215,53 @@ namespace HackerRank.Tests
             Assert.ThrowsException<ConstraintException>(
                 () => new BirthdayCakeCandles(inputOneCaseTwo, inputTwoCaseTwo));
         }
+
+        [TestMethod]
+        public void AppleAndOrangeTests()
+        {
+            // Case One (Correct)
+            var inputStartPointHouseCaseOne = 7;
+            var inputEndPointHouseCaseOne = 11;
+
+            var inputAppleTreePointCaseOne = 5;
+            var inputOrangeTreePointCaseOne = 15;
+
+            var inputFallenApplesCaseOne = new int[3] { -2, 2, 1 };
+            var inputFallenOrangesCaseOne = new int[2] { 5, -6 };
+
+            var exercise = new AppleAndOrange(
+                inputStartPointHouseCaseOne, 
+                inputEndPointHouseCaseOne,
+                inputAppleTreePointCaseOne,
+                inputOrangeTreePointCaseOne,
+                inputFallenApplesCaseOne,
+                inputFallenOrangesCaseOne);
+
+            var resultCaseOne = exercise.Execute();
+
+            var expectedOutputCaseOne = new int[2] { 1, 1 };
+
+            CollectionAssert.AreEqual(expectedOutputCaseOne, resultCaseOne);
+
+            // Case Two (Check Constraints)
+            var inputStartPointHouseCaseTwo = -1;
+            var inputEndPointHouseCaseTwo = 11;
+
+            var inputAppleTreePointCaseTwo = 5;
+            var inputOrangeTreePointCaseTwo = 15;
+
+            var inputFallenApplesCaseTwo = new int[3] { -2, 2, 1 };
+            var inputFallenOrangesCaseTwo = new int[2] { 5, -6 };
+
+            Assert.ThrowsException<ConstraintException>(
+                () => new AppleAndOrange(
+                inputStartPointHouseCaseTwo,
+                inputEndPointHouseCaseTwo,
+                inputAppleTreePointCaseTwo,
+                inputOrangeTreePointCaseTwo,
+                inputFallenApplesCaseTwo,
+                inputFallenOrangesCaseTwo));
+
+        }
     }
 }
